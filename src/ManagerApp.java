@@ -3,15 +3,11 @@ public class ManagerApp {
     System.out.println("");
 
     // ? parent
-    var manager = new Manager();
-    manager.fullName = "John Smith";
-    manager.age = 30;
+    var manager = new Manager("john smith", 20);
     manager.sayHello();
 
     // ? child
-    var vicePresident = new VicePresident();
-    vicePresident.fullName = "Jane Doe";
-    vicePresident.age = 25;
+    var vicePresident = new VicePresident("jane doe", 30);
     vicePresident.sayHello();
   }
 }
