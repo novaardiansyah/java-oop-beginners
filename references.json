@@ -1,0 +1,13 @@
+{
+  "related-information": {},
+  "search-information": [
+    {
+      "title": "set path java in vs code",
+      "description": "create or edit a settings.json file in the .vscode folder in the project root and add the following code:",
+      "code": [
+        "\"java.project.sourcePaths\": [\"src\"]",
+        "\"java.project.outputPath\": \"out\""
+      ]
+    }
+  ]
+}
