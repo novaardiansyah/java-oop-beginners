@@ -1,13 +1,9 @@
-class Manager {
-  String fullName;
-  Integer age;
-
+class Manager extends Employee {
   Manager(String fullName, Integer age) {
-    this.fullName = fullName;
-    this.age = age;
+    super(fullName, age);
   }
 
   void sayHello() {
-    System.out.println("Hello, I'm Manager " + fullName + " and I'm " + age + " years old.");
+    System.out.println("Hello, I'm Manager " + this.fullName + " and I'm " + this.age + " years old.");
   }
 }
