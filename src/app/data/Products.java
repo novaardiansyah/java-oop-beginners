@@ -8,4 +8,9 @@ public class Products {
     this.name = name;
     this.price = price;
   }
+
+  // ? overrides the toString method
+  public String toString() {
+    return "Name: " + name + " Price: " + price;
+  }
 }
