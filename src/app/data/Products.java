@@ -14,29 +14,31 @@ public class Products {
     return "Name: " + name + " Price: " + price;
   }
 
-  // ? overrides the equals method
+  // ? overrides the hashCode method
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((name == null) ? 0 : name.hashCode());
+    result = prime * result + price;
+    return result;
+  }
+
   public boolean equals(Object obj) {
-    if (obj == this) {
+    if (this == obj)
       return true;
-    }
-
-    if (!(obj instanceof Products)) {
+    if (obj == null)
       return false;
-    }
-
-    // * convert to Products object
-    Products products = (Products) obj;
-
-    if (this.price != products.price) {
+    if (getClass() != obj.getClass())
       return false;
-    }
-
-    if (this.name != null) {
-      return this.name.equals(products.name);
-    } else {
-      return products.name == null;
-    }
-
+    Products other = (Products) obj;
+    if (name == null) {
+      if (other.name != null)
+        return false;
+    } else if (!name.equals(other.name))
+      return false;
+    if (price != other.price)
+      return false;
+    return true;
   }
 
 }
