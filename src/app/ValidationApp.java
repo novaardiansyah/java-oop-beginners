@@ -8,6 +8,10 @@ public class ValidationApp {
   public static void main(String[] args) {
     System.out.println(""); // ? newline
 
+    /**
+     * ! Checked Exception
+     * need to use block catch()
+     */
     LoginRequest loginRequest = new LoginRequest(null, null);
 
     try {
@@ -17,8 +21,12 @@ public class ValidationApp {
     } finally {
       System.out.println("Finally Keyword");
     }
-    // catch (NullPointerException nullPointerException) {
-    // System.out.println(nullPointerException.getMessage());
-    // }
+
+    /**
+     * ! Runtime Exception
+     * no need to use block catch()
+     */
+    LoginRequest loginRequest2 = new LoginRequest("username", null);
+    ValidationUtil.validateRuntime(loginRequest2);
   }
 }
