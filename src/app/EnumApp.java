@@ -13,5 +13,6 @@ public class EnumApp {
 
     System.out.println("Fullname: " + customer.getName());
     System.out.println("Level: " + customer.getLevel());
+    System.out.println("Description: " + customer.getLevel().getDescription());
   }
 }
