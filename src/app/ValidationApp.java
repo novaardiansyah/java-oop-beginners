@@ -14,6 +14,8 @@ public class ValidationApp {
       ValidationUtil.validate(loginRequest);
     } catch (ValidationException | NullPointerException error) {
       System.out.println(error.getMessage());
+    } finally {
+      System.out.println("Finally Keyword");
     }
     // catch (NullPointerException nullPointerException) {
     // System.out.println(nullPointerException.getMessage());
