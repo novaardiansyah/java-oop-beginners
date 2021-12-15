@@ -1,5 +1,8 @@
 package app.util;
 
+import java.lang.reflect.Field;
+
+import app.annotation.NotBlank;
 import app.data.LoginRequest;
 import app.error.BlankException;
 import app.error.ValidationException;
@@ -34,4 +37,27 @@ public class ValidationUtil {
     }
   }
 
+  public static void validationReflection(Object object) {
+    Class class1 = object.getClass();
+    Field[] fields = class1.getDeclaredFields();
+
+    for (var field : fields) {
+      field.setAccessible(true);
+      if (field.getAnnotation(NotBlank.class) != null) {
+        // ? validate
+        try {
+          String value = (String) field.get(object);
+
+          if (value == null) {
+            throw new NullPointerException("value cannot be null");
+          } else if (value.isBlank()) {
+            throw new BlankException("value cannot be empty");
+          }
+
+        } catch (IllegalAccessException exception) {
+          System.out.println(exception.getMessage());
+        }
+      }
+    }
+  }
 }
