@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import app.annotation.Fancy;
+
+// ? Annotations
+@Fancy(name = "ReadApp", tags = { "Java", "Application" })
 public class ReadApp {
   public static void main(String[] args) {
     System.out.println(""); // ? newline
